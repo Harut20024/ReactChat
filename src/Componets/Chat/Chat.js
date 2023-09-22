@@ -42,8 +42,11 @@ function Chat({ userName }) {
             </form>
             <div>
                 {
-                    massage.map(el=>(
-                        <h2 key={el.id}>{el.txt}</h2>
+                    massage.map(el => (
+                        <h2 key={el.id}>
+                            {el.user === "me" ? <h3>{userName.name}</h3> : <h3>Bot</h3>}
+                            {el.txt}
+                        </h2>
                     ))
                 }
             </div>
